@@ -1,0 +1,10 @@
+{
+    "http://registry.gpii.org/applications/de.fraunhofer.iao.aos4all": [
+        {
+            "value": {
+                "highContrastEnabled": true,
+                "fontSize": "big"
+            }
+        }
+    ]
+}
