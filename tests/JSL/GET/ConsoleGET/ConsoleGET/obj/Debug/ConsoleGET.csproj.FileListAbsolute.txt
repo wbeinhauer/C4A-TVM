@@ -1,0 +1,6 @@
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.exe.config
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.exe
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.pdb
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.csprojResolveAssemblyReference.cache
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.exe
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.pdb
