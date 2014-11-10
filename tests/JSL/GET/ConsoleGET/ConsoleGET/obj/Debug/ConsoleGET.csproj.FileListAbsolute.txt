@@ -4,3 +4,15 @@ c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.pdb
 c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.csprojResolveAssemblyReference.cache
 c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.exe
 c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.pdb
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.dll
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.pdb
+c:\Cloud4All\Projects\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.xml
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.exe.config
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.exe
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.pdb
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.exe
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\ConsoleGET.pdb
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.dll
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.pdb
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\bin\Debug\Newtonsoft.Json.xml
+C:\GPII_GitHub\C4A-TVM\tests\JSL\GET\ConsoleGET\ConsoleGET\obj\Debug\ConsoleGET.csprojResolveAssemblyReference.cache

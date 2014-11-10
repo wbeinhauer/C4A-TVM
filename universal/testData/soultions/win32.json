@@ -1,42 +1,60 @@
 		
 	[
-		{ 
-			"name":"Ticket Vending Machine
-			"id":"http://registry.gpii.org/applications/de.fraunhofer.iao.aos4all":"
-			"contexts":(...)
-			"settingsHandlers":[{
-			"type": "gpii.settingsHandlers.noSettings",
+	
+	
+	    {
+        "name": "C4A-TVM",
+        "id": "de.fraunhofer.iao.C4A-TVM",
+        "contexts": {
+            "OS": [
+                {
+                    "id": "win32"
+                }
+            ]
+        },
+        "settingsHandlers": [
+            {
+                "type": "gpii.settingsHandlers.noSettings",
                 "capabilities": [
+                    "applications.net\\.gpii\\.C4A-TVM.id",
+                    "display.applications.net\\.gpii\\.C4A-TVM.name",
+                    "language",
                     "display.screenEnhancement.fontSize",
-                    "display.screenEnhancement.-provisional-highContrastTheme"
+                    "display.screenEnhancement.-provisional-highContrastTheme",
+                    "-provisional-general.-provisional-volume"
                 ],
                 "capabilitiesTransformations": {
                     "fontSize": "display.screenEnhancement.fontSize",
-                    "highContrastTheme": "display.screenEnhancement.-provisional-highContrastTheme"
+                    "language": "language",
+                    "highContrastTheme": "display.screenEnhancement.-provisional-highContrastTheme",
+                    "volume": "-provisional-general.-provisional-volume"
+					"highContrastEnabled": {
+                        "value": "display.screenEnhancement.-provisional-highContrastEnabled"
+                    },
+                     "fontSize": {
+                        "value": {
+                            "transform": {
+                                "type": "gpii.transformer.quantize",
+                                "inputPath": "display.screenEnhancement.fontSize",
+                                "ranges": [{
+                                    "upperBound": 14,
+                                    "output": "normal"
+                                },{
+                                    "output": "large"
+                                }]
+                            }
+                        }
+                    }
                 }
-			}]
-		}]
-		
-	"lifecycleManager":{
-		"start":[
-			"setSettings",
-			{
-			"type":"gpii.launch.exec",
-			"command":"$((environment),System-Root)\\System32\\Magnify.exe"
-			or "command":"\"$(registry).HKEY_LOCAL_MACHINE_\\SOFTWARE\\...\\System32\\Kiosk.exe"
-			}
-		],
-		"stop":[
-			{
-			"type":"gpii.launch.exec",
-			"command":"$((environment).System-Root)\\System32\\Testkill.exe /f /k"
-			}
-			"restoreSettings"
-		],
-	]
-		
+            }
+        ],
+        "lifecycleManager": {
+        }
+    }
 	
-	[
+	
+	
+	
     {
         "name": "smarthouse",
         "id": "net.gpii.smarthouses",

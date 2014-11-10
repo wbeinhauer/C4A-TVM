@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SampleApp.Pages.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel MinWidth="300">
+                <Button Name="WholeDayTicketButton" Content="Whole day ticket 8,50 €" Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Pay.xaml" Height="50" Width="300" Margin="10" Click="WholeDayTicketButton_Click"/>
+                <Button Name="TenTicketsButton" Content="10 tickets 6,10 €" Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Pay.xaml" Height="50" Width="300" Margin="10" Click="TenTicketsButton_Click"/>
+                <Button Name="FiveTicketsButton" Content="5 tickets 3,50 €" Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Pay.xaml" Height="50" Width="300" Margin="10" Click="FiveTicketsButton_Click"/>
+                <Button Name="SingleTicketButton" Content="Single ticket 2 €" Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Print.xaml" Height="50" Width="300" Margin="10" Click="SingleTicketButton_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
