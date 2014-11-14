@@ -1,0 +1,78 @@
+
+Web Solution
+    {
+        "name": "C4A",
+        "id": "de.uni-stuttgart.aos4all",
+        "contexts": {
+            "OS": [
+                {
+                    "id": "web"
+                }
+            ]
+        },
+        "settingsHandlers": [
+            {
+                "type": "gpii.settingsHandlers.noSettings",
+                "capabilities": [
+                    "applications.org\\.uni-stuttgart\\.aos4all.id"
+                ],
+                "capabilitiesTransformations": {
+                    
+                }
+            }
+        ]
+    },
+	
+Win32 Solution
+	   
+	   {
+        "name": "C4A-TVM",
+        "id": "de.fraunhofer.iao.C4A-TVM",
+        "contexts": {
+            "OS": [
+                {
+                    "id": "win32"
+                }
+            ]
+        },
+        "settingsHandlers": [
+            {
+                "type": "gpii.settingsHandlers.noSettings",
+                "capabilities": [
+                    "applications.net\\.gpii\\.C4A-TVM.id", \\how to determine id???
+                    "display.applications.net\\.gpii\\.C4A-TVM.name",  \\how to describe name ???
+                    "language",
+                    "display.screenEnhancement.fontSize",
+                    "display.screenEnhancement.-provisional-highContrastTheme",  \\how to describe capabilities (of application)?
+                    "-provisional-general.-provisional-volume"
+                ],
+                "capabilitiesTransformations": {
+                    "fontSize": "display.screenEnhancement.fontSize",
+                    "language": "language",
+                    "highContrastTheme": "display.screenEnhancement.-provisional-highContrastTheme",
+                    "volume": "-provisional-general.-provisional-volume"
+					"highContrastEnabled": {
+                        "value": "display.screenEnhancement.-provisional-highContrastEnabled"
+                    },
+                     "fontSize": {
+                        "value": {
+                            "transform": {
+                                "type": "gpii.transformer.quantize",
+                                "inputPath": "display.screenEnhancement.fontSize",
+                                "ranges": [{
+                                    "upperBound": 14,
+                                    "output": "normal"
+                                },{
+                                    "output": "large"
+                                }]
+                            }
+                        }
+                    }
+                }
+            }
+        ],
+		{
+        "lifecycleManager": {
+		   \\none
+        }
+    }

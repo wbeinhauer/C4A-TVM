@@ -104,10 +104,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="App_Code\Bitmap.cs" />
     <Content Include="App_Code\IDNFC.cs" />
     <Content Include="App_Code\IDScanner.cs" />
     <Content Include="App_Code\Printer.cs" />
+=======
+    <Compile Include="Bitmap.cs" />
+>>>>>>> origin/master
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,10 +119,15 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+=======
+    <Compile Include="IDScanner.cs" />
+    <Compile Include="Printer.cs" />
+>>>>>>> origin/master
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

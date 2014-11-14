@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Drawing;
 
+// GET     h ttp://127.0.0.1:8081/vladimir/settings/{"OS":{"id":"linux"},"solutions":[{"id":"org.gnome.desktop.a11y.magnifier"}]}
+//BACK     {"org.gnome.desktop.a11y.magnifier":{"mag-factor":2,"mouse-tracking":"centered","screen-position":"full-screen"}} 
+
+// GET     h ttp://127.0.0.1:8081/sammy/settings/{"OS":{"id":"web"},"solutions":[{"id":"de.fraunhofer.iao.C4A-TVM"}]}
+//BACK     {"de.fraunhofer.iao.C4A-TVM":{"highContrastEnabled": true, "fontSize": "big"}} 
+
+
 namespace ConsoleGET
 {
     class Program
@@ -16,7 +23,17 @@ namespace ConsoleGET
             
         {
 
-            Console.WriteLine("ConsoleGET.Program");
+            
+            TVM tvm = new TVM{
+                fontsize = "big",
+                highContrastEnabled = "true"
+            };
+                
+            TVMSettings t2 = new TVMSettings(tvm);
+
+            string x = JsonConvert.SerializeObject(t2);
+            
+            Console.WriteLine(x + "ConsoleGET.Program");
             Printer printer = new Printer();
             string s = "";
             if (printer != null) { s = printer.ToString(); } //ist trotzdem nicht da auch wenn nicht null.
@@ -121,7 +138,7 @@ namespace ConsoleGET
     public class Context
     {
 
-        public  os { get; set; } //win32 web linux
+        public  OS os { get; set; } //win32 web linux
     }
 
     public class OS
@@ -130,9 +147,27 @@ namespace ConsoleGET
         public string id { get; set; } //win32 web linux
     }
 
+    
+
+    public class TVMSettings
+    {
+        
+        public TVMSettings(TVM tvm){
+            this.TVM = tvm;
+        }
+
+        [JsonProperty("de.fraunhofer.iao.C4A-TVM")]
+        public TVM TVM {get; set;}
+    }
+
+
     public class TVM
     {
-        string id = "TVM.id";
+        [JsonProperty("name")]
+        public string highContrastEnabled {get; set;}
+        //[JsonProperty("name")]
+        public string fontsize {get; set;}
+
 
     }
 

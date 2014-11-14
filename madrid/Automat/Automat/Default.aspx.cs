@@ -79,6 +79,9 @@ namespace C4A_demo_2
             runjQueryCode("$('.button_hoch_normal').switchClass('button_hoch_normal','button_hoch_contrast','slow');");
             runjQueryCode("$('.button_hoch_normal_touristen').switchClass('button_hoch_normal_touristen','button_hoch_contrast_touristen','slow');");
             runjQueryCode("$('.area_header').switchClass('area_header','area_header_contrast','slow');");
+            IDScanner scanner = new IDScanner();
+            String s = scanner.scan();
+            HyperLinkB.Text = s;
         }
 
 

@@ -1,0 +1,14 @@
+
+
+
+get Flow Manager to run locally!!
+or: add solution files to online FlowManager
+
+
+Preferences:
+Write down user preferences in GPII common terms or in own terms?
+saved on card/ring in bit format? 
+
+Solution:
+Is solution to be a web solution or a win32? 
+
