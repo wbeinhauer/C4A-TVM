@@ -6,3 +6,30 @@ or
 b) give app specific settings like the vladimir example, liked for example from chrome1.json?
 or 
 c) has there to be both??
+
+
+{
+    "http://registry.gpii.org/applications/de.fraunhofer.iao.C4A-TVM": [
+        {
+            "value": {
+                "highContrastEnabled": true,
+                "fontSize": "big"
+            }
+        }
+    ]
+}
+
+
+
+
+
+{
+    "http://registry.gpii.org/common/fontSize": [{ "value": 24 }],
+    "http://registry.gpii.org/common/foregroundColor": [{"value": "white"}],
+    "http://registry.gpii.org/common/backgroundColor": [{"value": "black"}],
+    "http://registry.gpii.org/common/fontFaceFontName": [{"value": ["Comic Sans"]}],
+    "http://registry.gpii.org/common/fontFaceGenericFontFace": [{"value": "sans serif"}],
+    "http://registry.gpii.org/common/magnification": [{"value": 2.0}],
+    "http://registry.gpii.org/common/tracking": [{"value": ["mouse"]}],
+    "http://registry.gpii.org/common/invertColours": [{"value": true}]
+}
