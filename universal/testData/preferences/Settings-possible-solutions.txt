@@ -1,0 +1,8 @@
+
+Are user needs & preferences specified 
+
+a) in general? in common terms, like the example of sammy? 
+or
+b) give app specific settings like the vladimir example, liked for example from chrome1.json?
+or 
+c) has there to be both??

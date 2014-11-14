@@ -1,0 +1,16 @@
+
+
+Events von GUI an Hardware und Hardware an GUI
+
+
+SII RP-10 (Seiko Thermodrucker) geht trotz installiertem Pos4.Net Treiber nicht
+
+
+
+Scanner wirft Zugriffs-Exception 
+
+
+
+RFID:
+
+Format und Karten lesen... sind auf Karten nur einzelne Bits pro Eigenschaft nach EN-xxx Standard gesetzt, oder auch user token gespeichert??
