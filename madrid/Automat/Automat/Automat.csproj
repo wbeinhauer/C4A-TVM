@@ -39,6 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.PointOfService, Version=1.14.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Microsoft Point Of Service\SDK\Microsoft.PointOfService.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,27 +62,52 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01_mvv.zip" />
+    <Content Include="Home.aspx" />
+    <Content Include="localhost_51972.v12.suo" />
+    <Content Include="TestWebsite.v12.suo" />
+    <Content Include="Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="website.publishproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="C4A_demo_2.csproj" />
     <Content Include="C4A_demo_2.csproj.user" />
     <Content Include="C4A_styles.css" />
     <Content Include="C4A_styles_old.css" />
+    <Content Include="createdBitmapFS.bmp" />
+    <Content Include="createdBitmapFS.png" />
     <Content Include="Default.aspx" />
+    <Content Include="FeCom.dll" />
+    <Content Include="FedmIscCoreVC100.dll" />
+    <Content Include="FedmIscMyAxxessVC100.dll" />
+    <Content Include="fefu.dll" />
+    <Content Include="FeIsc.dll" />
+    <Content Include="fetcl.dll" />
+    <Content Include="fetcp.dll" />
+    <Content Include="feusb.dll" />
+    <Content Include="localhost_51972.sln" />
     <Content Include="mrt_stations_jakarta.txt" />
     <Content Include="muc.txt" />
+    <Content Include="OBIDISC4NET.dll" />
+    <Content Include="OBIDISC4NETnative.dll" />
+    <Content Include="Printer_IDScanner.txt" />
     <Content Include="style.css" />
+    <Content Include="StyleSheet8.css" />
+    <Content Include="TestWebsite.sln" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Bitmap.cs" />
+    <Content Include="App_Code\IDNFC.cs" />
+    <Content Include="App_Code\IDScanner.cs" />
+    <Content Include="App_Code\Printer.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,10 +115,15 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Code\" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
