@@ -33,7 +33,36 @@ namespace ConsoleGET
 
             string x = JsonConvert.SerializeObject(t2);
             
-            Console.WriteLine(x + "ConsoleGET.Program");
+            Console.WriteLine(x + "  ConsoleGET.Program");
+
+            x = "{\"de.fraunhofer.iao.C4A-TVM\":{\"highContrastEnabled\": false, \"fontSize\": \"middle\"}}";
+
+            Console.WriteLine(x + "  middle");
+
+            TVMSettings t1 = JsonConvert.DeserializeObject<TVMSettings>(x);
+            String f1 = t1.TVM.fontsize;
+            String c1 = t1.TVM.highContrastEnabled;
+
+            if (f1 != null)
+            {
+                Console.WriteLine("f1 = " + f1);
+            }
+            else
+            {
+                Console.WriteLine("f1 = null");
+            }
+
+
+            if (c1 != null)
+            {
+                Console.WriteLine("c1 = " + c1);
+            }
+            else
+            {
+                Console.WriteLine("c1 = null");
+            }
+
+
             Printer printer = new Printer();
             string s = "";
             if (printer != null) { s = printer.ToString(); } //ist trotzdem nicht da auch wenn nicht null.
@@ -163,7 +192,7 @@ namespace ConsoleGET
 
     public class TVM
     {
-        [JsonProperty("name")]
+        //[JsonProperty("name")]
         public string highContrastEnabled {get; set;}
         //[JsonProperty("name")]
         public string fontsize {get; set;}

@@ -13,10 +13,53 @@
             {
                 "type": "gpii.settingsHandlers.noSettings",
                 "capabilities": [
-                    "applications.org\\.uni-stuttgart\\.aos4all.id"
+                    "applications.net\\.gpii\\.C4A-TVM.id",
+                    "display.applications.net\\.gpii\\.C4A-TVM.name",
+                    "fontSize",
+                    "contrastTheme",
+					"timeOut",
+                    "language"
                 ],
                 "capabilitiesTransformations": {
-                    
+                    "fontSize": {
+                        "value": {
+                            "transform": {
+                                "type": "gpii.transformer.quantize",
+                                "inputPath": "display.screenEnhancement.fontSize",
+                                "ranges": [{
+                                    "upperBound": 14,
+                                    "output": "normal"
+                                },{
+                                    "output": "big"
+                                }]
+                            }
+                        }
+					}
+					"contrastTheme": "default",
+                            "options": {
+                                "default": {
+                                    "outputValue": "default"
+                                },
+                                "yellow-black": {
+                                    "outputValue": "yellow-black"
+                                }
+                            }
+					"timeout": {
+						"value": {
+                            "transform": {
+                                "type": "gpii.transformer.quantize",
+                                "inputPath": "common.terms.timeout",
+                                "ranges": [{
+                                    "interaction speed": 1,
+                                    "output": "default"
+                                },{
+                                    "interaction speed": 2,
+                                    "output": "long"
+                                }]
+                            }
+                        }
+					"language": "language",
+					}
                 }
             }
         ]

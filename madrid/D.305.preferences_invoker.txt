@@ -1,0 +1,8 @@
+
+
+
+Application specific or common terms?
+
+realistic setting for TVM verndor or manufacturer is to have a description oof the capabilities in application specific terms, rather than in general application settings that are described in the  common terms. 
+
+ 
