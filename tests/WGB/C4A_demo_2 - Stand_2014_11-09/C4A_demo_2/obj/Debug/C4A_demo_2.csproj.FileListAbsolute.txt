@@ -3,3 +3,9 @@ C:\Users\wbeinhau\Dropbox\Automaten\C4a\C4A_demo_2\C4A_demo_2\bin\C4A_demo_2.pdb
 C:\Users\wbeinhau\Dropbox\Automaten\C4a\C4A_demo_2\C4A_demo_2\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\wbeinhau\Dropbox\Automaten\C4a\C4A_demo_2\C4A_demo_2\obj\Debug\C4A_demo_2.dll
 C:\Users\wbeinhau\Dropbox\Automaten\C4a\C4A_demo_2\C4A_demo_2\obj\Debug\C4A_demo_2.pdb
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\bin\C4A_demo_2.dll.config
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\bin\C4A_demo_2.dll
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\bin\C4A_demo_2.pdb
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\obj\Debug\C4A_demo_2.csprojResolveAssemblyReference.cache
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\obj\Debug\C4A_demo_2.dll
+C:\GPII_GitHub\C4A-TVM\tests\WGB\C4A_demo_2 - Stand_2014_11-09\C4A_demo_2\obj\Debug\C4A_demo_2.pdb

@@ -3,14 +3,33 @@
 Events von GUI an Hardware und Hardware an GUI
 
 
-SII RP-10 (Seiko Thermodrucker) geht trotz installiertem Pos4.Net Treiber nicht
+SII RP-10 (Seiko Thermodrucker) geht trotz installiertem Pos4.Net Treiber nicht, 
+eine weiteres Programm und POS for .NET 1.12 muss installiert werden.
+
+Bisheriger Code läuft mit POS for .NET 1.14
 
 
-
-Scanner wirft Zugriffs-Exception 
+Scanner wirft Zugriffs-Exception - 
 
 
 
 RFID:
 
 Format und Karten lesen... sind auf Karten nur einzelne Bits pro Eigenschaft nach EN-xxx Standard gesetzt, oder auch user token gespeichert??
+
+
+Running the cloudbased flowmanager locally
+
+Running a Preferences Server Locally
+
+By default, a cloud-based Flow Manager will use the online Preferences Server at http://preferences.gpii.net. In some cases (e.g. if you are developing with a local cloud-based Flow Manager and want to use your own N&P sets), you have to run your own instance of a Preferences Server.
+To run the Preferences Server locally:
+tell your Flow Manager to use your own instance of the preferences server by editing gpii/node_modules/flowManager/configs/cloudBased.json and replacing "preferences": "http://preferences.gpii.net/user/%token" with "preferences": "http://localhost:8082/user/%token";
+tell your own instance of the preferences server to run on port 8082, by editing gpii/node_modules/preferencesServer/configs/development.json and add "port": 8082 under kettle.server's options block; then
+run the Flow Manager and the MatchMaker as it is described above; and
+in another console, run:
+ node node_modules/kettle/lib/init.js gpii/node_modules/preferencesServer/configs/
+ 
+ http://wiki.gpii.net/w/Preferences_Server#Running_a_Preferences_Server_Locally
+ 
+ 
