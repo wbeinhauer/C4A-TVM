@@ -7,4 +7,14 @@
     "http://registry.gpii.org/common/magnification": [{"value": 2.0}],
     "http://registry.gpii.org/common/tracking": [{"value": ["mouse"]}],
     "http://registry.gpii.org/common/invertColours": [{"value": true}]
+	"de.fraunhofer.iao.C4A-TVM": [
+        {
+            "value": {
+                "contrastTheme": "yellow-black",
+                "fontFace": "Comic Sans",
+                "buttonSize": "big",
+                "fontSize": "big"
+            }
+        }
+    ]
 }

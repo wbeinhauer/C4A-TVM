@@ -2,7 +2,7 @@
     "de.fraunhofer.iao.C4A-TVM": [
         {
             "value": {
-                "contrastTheme": "yellow-black",
+                "timeOut": "long",
                 "fontSize": "big"
             }
         }
