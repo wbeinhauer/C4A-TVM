@@ -4,25 +4,44 @@
         "name": "C4A-TVM",
         "id": "de.fraunhofer.iao.C4A-TVM",
         "contexts": {
-            "OS": [
+		            "OS": [
                 {
                     "id": "web"
                 }
             ]
-        },
+        }
+		,
         "settingsHandlers": [
             {
                 "type": "gpii.settingsHandlers.noSettings",
                 "capabilities": [
-                    "applications.net\\.gpii\\.C4A-TVM.id",
-                    "display.applications.net\\.gpii\\.C4A-TVM.name",
-                    "fontSize",
-                    "contrastTheme",
-					"timeOut",
-                    "language"
-                ],
+                    "de\\.fraunhofer\\.iao\\.C4A-TVM.id",
+                    "de\\.fraunhofer\\.iao\\.gpii\\.C4A-TVM.name"
+                ]
+				,
                 "capabilitiesTransformations": {
-                    "screenReaderTTSEnabled":"display.screenReader.-provisional-screenReaderTTSEnabled",
+                    "highContrastEnabled":"display.screenEnhancement.-provisional-highContrastEnabled",
+                    "highContrastTheme":"display.screenEnhancement.-provisional-highContrastTheme",
+                    "invertColours":"display.screenEnhancement.-provisional-invertColours",
+                    "theme": {
+                        "transform": {
+                            "type": "fluid.transforms.valueMapper",
+                            "inputPath": "display.screenEnhancement.-provisional-highContrastTheme",
+                            "defaultInputValue": "default",
+                            "options": {
+                                "black-white": {
+                                    "outputValue": "Black-White"
+                                },
+                                "yellow-black": {
+                                    "outputValue": "Yellow-Black"
+                                },
+                                "default": {
+                                    "outputValue": "default"
+                                }
+                            }
+                        }
+                    }
+					,
                     "fontSize": {
                         "transform":{
                             "type":"gpii.transformer.quantize",
@@ -31,48 +50,110 @@
                             "ranges":[
                                 {
                                     "upperBound":12,
-                                    "output":"medium"
+                                    "output":"default"
                                 },
                                 {
-                                    "upperBound":18,
-                                    "output":"large"
-                                },
-                                {
-                                    "output":"x-large"
+                                    "output":"big"
                                 }
                             ]
                         }
-                    },
-                    "magnifierEnabled":"display.screenEnhancement.-provisional-magnifierEnabled",
-                    "magnification": {
+                    }
+					,
+                    "fontFace": {
+                        "transform":{
+                            "type":"gpii.transformer.quantize",
+                            "inputPath":"display.screenEnhancement.fontFace",
+                            "input":9,
+                            "ranges":[
+								{
+                                    "Tiresias":"Tiresias",
+                                    "output":"Tiresias"
+                                },
+                                {
+                                    "Comic Sans":"Comic Sans",
+                                    "output":"Comic Sans"
+                                },
+                                {
+                                    "Calibri":"Calibri",
+                                    "output":"Calibri"
+                                },                                {
+                                    "output":"default"
+                                }
+                            ]
+                        }
+                    }
+					,
+                    "ButtonSize": {
+                        "transform":{
+                            "type":"gpii.transformer.quantize",
+                            "inputPath":"display.screenEnhancement.UIElementSize",
+                            "input":9,
+                            "ranges":[
+								{
+                                    "big":"big",
+                                    "output":"big"
+                                },
+                                {
+                                    "output":"default"
+                                }
+                            ]
+                        }
+                    }
+					,
+					"timeOut": {
                         "transform": {
                             "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.magnification",
+                            "inputPath":"interaction.IOEnhancement.timeOut",
                             "input":1,
                             "ranges":[
                                 {
-                                    "upperBound":1.2,
-                                    "output":1
+                                    "long":"long",
+                                    "output":"long"
                                 },
-                                {
-                                    "upperBound":2.5,
-                                    "output":2
-                                },
-                                {
-                                    "output":3
-                                }
+								{
+                                    "output":"default"
+                                }                                
                             ]
                         }
-                    },
-                    "highContrastEnabled":"display.screenEnhancement.-provisional-highContrastEnabled",
-                    "highContrastTheme":"display.screenEnhancement.-provisional-highContrastTheme",
-                    "invertColours":"display.screenEnhancement.-provisional-invertColours"
+                    }
+					,
+					"language": {
+                        "transform": {
+                            "type": "fluid.transforms.valueMapper",
+                            "inputPath": "language",
+                            "defaultInputValue": "en",
+                            "options": {
+                                "en": {
+                                    "outputValue": "English"
+                                },
+                                "de": {
+                                    "outputValue": "German"
+                                },
+                                "fr": {
+                                    "outputValue": "French"
+                                },
+                                "it": {
+                                    "outputValue": "Italian"
+                                },
+                                "es": {
+                                    "outputValue": "Spanish"
+                                },
+                                "el": {
+                                    "outputValue": "Greek"
+                                },
+                                "ru": {
+                                    "outputValue": "Russian"
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         ]
     },
 	
-	    {
+	{
         "name": "Cloud4Chrome",
         "id": "org.chrome.cloud4chrome",
         "contexts": {
