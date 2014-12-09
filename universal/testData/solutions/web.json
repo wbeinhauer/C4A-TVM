@@ -1,5 +1,4 @@
 [
-
     {
         "name": "C4A-TVM",
         "id": "de.fraunhofer.iao.C4A-TVM",
@@ -20,138 +19,19 @@
                 ]
 				,
                 "capabilitiesTransformations": {
-                    "highContrastEnabled":"display.screenEnhancement.-provisional-highContrastEnabled",
-                    "highContrastTheme":"display.screenEnhancement.-provisional-highContrastTheme",
-                    "invertColours":"display.screenEnhancement.-provisional-invertColours",
-                    "theme": {
-                        "transform": {
-                            "type": "fluid.transforms.valueMapper",
-                            "inputPath": "display.screenEnhancement.-provisional-highContrastTheme",
-                            "defaultInputValue": "default",
-                            "options": {
-                                "black-white": {
-                                    "outputValue": "Black-White"
-                                },
-                                "yellow-black": {
-                                    "outputValue": "Yellow-Black"
-                                },
-                                "default": {
-                                    "outputValue": "default"
-                                }
-                            }
-                        }
-                    }
-					,
-                    "fontSize": {
-                        "transform":{
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.fontSize",
-                            "input":9,
-                            "ranges":[
-                                {
-                                    "upperBound":12,
-                                    "output":"default"
-                                },
-                                {
-                                    "output":"big"
-                                }
-                            ]
-                        }
-                    }
-					,
-                    "fontFace": {
-                        "transform":{
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.fontFace",
-                            "input":9,
-                            "ranges":[
-								{
-                                    "Tiresias":"Tiresias",
-                                    "output":"Tiresias"
-                                },
-                                {
-                                    "Comic Sans":"Comic Sans",
-                                    "output":"Comic Sans"
-                                },
-                                {
-                                    "Calibri":"Calibri",
-                                    "output":"Calibri"
-                                },                                {
-                                    "output":"default"
-                                }
-                            ]
-                        }
-                    }
-					,
-                    "ButtonSize": {
-                        "transform":{
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.UIElementSize",
-                            "input":9,
-                            "ranges":[
-								{
-                                    "big":"big",
-                                    "output":"big"
-                                },
-                                {
-                                    "output":"default"
-                                }
-                            ]
-                        }
-                    }
-					,
-					"timeOut": {
-                        "transform": {
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"interaction.IOEnhancement.timeOut",
-                            "input":1,
-                            "ranges":[
-                                {
-                                    "long":"long",
-                                    "output":"long"
-                                },
-								{
-                                    "output":"default"
-                                }                                
-                            ]
-                        }
-                    }
-					,
-					"language": {
-                        "transform": {
-                            "type": "fluid.transforms.valueMapper",
-                            "inputPath": "language",
-                            "defaultInputValue": "en",
-                            "options": {
-                                "en": {
-                                    "outputValue": "English"
-                                },
-                                "de": {
-                                    "outputValue": "German"
-                                },
-                                "fr": {
-                                    "outputValue": "French"
-                                },
-                                "it": {
-                                    "outputValue": "Italian"
-                                },
-                                "es": {
-                                    "outputValue": "Spanish"
-                                },
-                                "el": {
-                                    "outputValue": "Greek"
-                                },
-                                "ru": {
-                                    "outputValue": "Russian"
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-        ]
-    },
+					"theme": {
+						"transform": {
+							type: "fluid.transforms.condition",
+							conditionPath: "display.screenEnhancement.-provisional-highContrastEnabled",
+							"true": "yellow-black",
+							"false": ""
+						}
+					}
+				}
+			}
+		]
+	}
+	,
 	
 	{
         "name": "Cloud4Chrome",
@@ -219,75 +99,6 @@
             }
         ]
     },
-	
-	{
-        "name": "Cloud2Chrome",
-        "id": "org.chrome.cloud2chrome",
-        "contexts": {
-            "OS": [
-                {
-                    "id": "web"
-                }
-            ]
-        },
-        "settingsHandlers": [
-            {
-                "type": "gpii.settingsHandlers.noSettings",
-                "capabilities": [
-                    "applications.org\\.chrome\\.cloud2chrome.id"
-                ],
-                "capabilitiesTransformations": {
-                    "screenReaderTTSEnabled":"display.screenReader.-provisional-screenReaderTTSEnabled",
-                    "fontSize": {
-                        "transform":{
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.fontSize",
-                            "input":9,
-                            "ranges":[
-                                {
-                                    "upperBound":12,
-                                    "output":"medium"
-                                },
-                                {
-                                    "upperBound":18,
-                                    "output":"large"
-                                },
-                                {
-                                    "output":"x-large"
-                                }
-                            ]
-                        }
-                    },
-                    "magnifierEnabled":"display.screenEnhancement.-provisional-magnifierEnabled",
-                    "magnification": {
-                        "transform": {
-                            "type":"gpii.transformer.quantize",
-                            "inputPath":"display.screenEnhancement.magnification",
-                            "input":1,
-                            "ranges":[
-                                {
-                                    "upperBound":1.2,
-                                    "output":1
-                                },
-                                {
-                                    "upperBound":2.5,
-                                    "output":2
-                                },
-                                {
-                                    "output":3
-                                }
-                            ]
-                        }
-                    },
-                    "highContrastEnabled":"display.screenEnhancement.-provisional-highContrastEnabled",
-                    "highContrastTheme":"display.screenEnhancement.-provisional-highContrastTheme",
-                    "invertColours":"display.screenEnhancement.-provisional-invertColours"
-                }
-            }
-        ]
-    },
-	
-	
     {
         "name": "JME Cloud4all Themes",
         "id": "info.cloud4all.JME",
