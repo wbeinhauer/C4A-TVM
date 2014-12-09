@@ -46,7 +46,7 @@
                         "transform":{
                             "type":"gpii.transformer.quantize",
                             "inputPath":"display.screenEnhancement.fontSize",
-                            "input":12,
+                            "input":9,
                             "ranges":[
                                 {
                                     "upperBound":12,
@@ -61,10 +61,10 @@
 					,
                     "fontFace": {
                         "transform":{
-                            "type":"fluid.transforms.valueMapper",
-                            "inputPath":"fontFace",
-                            "input":"default",
-                            "options":{
+                            "type":"gpii.transformer.quantize",
+                            "inputPath":"display.screenEnhancement.fontFace",
+                            "input":9,
+                            "ranges":[
 								{
                                     "Tiresias":"Tiresias",
                                     "output":"Tiresias"
@@ -79,7 +79,7 @@
                                 },                                {
                                     "output":"default"
                                 }
-                            }
+                            ]
                         }
                     }
 					,

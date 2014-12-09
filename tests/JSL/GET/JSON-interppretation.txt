@@ -1,9 +1,0 @@
-
-no definitions for this user token 
-{}
-
-user token not there (message: no preferences for this token found, continuing with defaults"
-http://127.0.0.1:8081/san/settings/%7B%22OS%22:%7B%22id%22:%22linux%22%7D,%22solutions%22:[%7B%22id%22:%22org.gnome.desktop.a11y.magnifier%22%7D]%7D
-{"isError":true,"message":"ENOENT, open 'C:\\Program Files\\GPII\\node_modules\\universal\\testData\\preferences\\san.json'"}
-
-
