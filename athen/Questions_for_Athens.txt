@@ -1,0 +1,13 @@
+
+
+
+
+
+
+ACCEPTANCE TESTS
+
+Regarding your question: the acceptance tests are needed in order to make sure that new releases of the GPII do not affect the integration of the various units/components/applications. In the near future we will run these tests weekly. Since your application interacts with GPII, there should be an acceptance test for it.
+Of course, there comes the question if other people can run the tests without having access to the actual device. I think it is best to discuss this with Kasper in Athens next week, as he can answer this from the side of the architecture team.
+
+Best regards,
+Otilia
