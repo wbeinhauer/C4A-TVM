@@ -191,10 +191,10 @@
   </WORDING>
   <WORDING>
     <ID>28</ID>
-    <de>-- not defined --</de>
-    <en>-- not defined --</en>
-    <fr>-- not defined --</fr>
-    <gr>-- not defined --</gr>
+    <de>-- not defined 28--</de>
+    <en>-- not defined 28--</en>
+    <fr>-- not defined 28--</fr>
+    <gr>-- not defined 28--</gr>
   </WORDING>
   <WORDING>
     <ID>29</ID>
@@ -244,5 +244,19 @@
     <en>Tourist Ticket Children</en>
     <fr>Billet Touristique enfants</fr>
     <gr>-- not defined --</gr>
+  </WORDING>
+  <WORDING>
+    <ID>36</ID>
+    <de>Fahrkarten</de>
+    <en>Tickets</en>
+    <fr>Billets</fr>
+    <gr>test</gr>
+  </WORDING>
+  <WORDING>
+    <ID>37</ID>
+    <de>test</de>
+    <en>test</en>
+    <fr>test</fr>
+    <gr>test</gr>
   </WORDING>
 </dataroot>

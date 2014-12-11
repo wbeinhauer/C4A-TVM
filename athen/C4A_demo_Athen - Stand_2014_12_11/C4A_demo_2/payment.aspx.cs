@@ -26,7 +26,8 @@ namespace C4A_demo_2
             choice.Text = Global.wordingtable[25];
             total_price_label.Text = Global.wordingtable[17] + ":";
             add_service_value.Text = Global.ticket.special;
-
+            tvm_header.Text = "Tickets";
+            // tvm_header.Text = Global.wordingtable[37];
         }
 
         protected void navigate_ahead_Click(object sender, EventArgs e)

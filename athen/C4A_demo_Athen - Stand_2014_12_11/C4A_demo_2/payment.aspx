@@ -28,6 +28,7 @@
     	</div>
     </div>
 
+ <asp:Label runat="server" ID="tvm_header" ForeColor="#F0F0F0" style="position:absolute; left:111px; top:306px;"></asp:Label>
 
     <div id="container">
       <div id="linksstepbystep">
@@ -67,7 +68,8 @@
     <a href="Default.aspx" class="button_eng_normal"><asp:Label runat="server" ID="cancel_label"></asp:Label></a>
     
      <asp:Label runat="server" ID="yourticketheadline" CssClass="time" style="position:absolute; left:733px; top:-505px"></asp:Label>
-     <asp:Label runat="server" ID="to_label" style="position:absolute; left:741px; top:-460px; color:#777777" >Nach</asp:Label>
+     <asp:Label runat="server" ID="to_label" style="position:absolute; left:741px; top:-460px; color:#777777" ></asp:Label>
+    
     	
    	<asp:LinkButton runat="server" id="navigate_ahead" NavigateUrl="#" 
             CssClass="button_eng_normal" style="position:absolute; left:404px" 
