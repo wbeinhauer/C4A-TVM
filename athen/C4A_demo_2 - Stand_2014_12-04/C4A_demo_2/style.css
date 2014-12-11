@@ -464,22 +464,34 @@ h1 {
     height:768px;
     background-repeat: no-repeat;
   }
+  
 .startseite_C4A_contrast {
     background-image: url("../img/bg_C4A_contrast.png");
     background-repeat: no-repeat;
   }
   
-
+.stepbystep_C4A {
+    background-image: url(../img/stepbystep_C4A.png);
+    width: 1024px;
+    height:768px;
+    background-repeat: no-repeat;
+  }
   
-.startseitevia {
-    background-image: url(../img/bgvia.png);
-    background-repeat: no-repeat;
-  }
-.startseitermv {
-    background-image: url(../img/bgrmv.png);
-    background-repeat: no-repeat;
-  }
 
+.payment_C4A {
+    background-image: url(../img/payment_C4A_2.png);
+    width: 1024px;
+    height:768px;
+    background-repeat: no-repeat;
+  }
+  
+  
+.touristbg_C4A {
+    background-image: url(../img/tourist_munich.png);
+    width: 1024px;
+    height:768px;
+    background-repeat: no-repeat;
+  }
 
 
 .startseite {
@@ -492,49 +504,17 @@ h1 {
     background-repeat: no-repeat;
   }
   
-  
-.stepbysteprmv {
-    background-image: url(../img/stepbysteprmv.png);
-    background-repeat: no-repeat;
-  }
 
-.stepbystepvia {
-    background-image: url(../img/stepbystepvia.png);
-    background-repeat: no-repeat;
-  }
- .stepbystephvv {
-    background-image: url(../img/stepbystephvv.png);
-    background-repeat: no-repeat;
-  }
+
 .stepbystepmvv {
     background-image: url(../img/stepbystepmvv.png);
     background-repeat: no-repeat;
   }
-.stepbystepvbb {
-    background-image: url(../img/stepbystepvbb.png);
-    background-repeat: no-repeat;
-  }
 
 
-.bezahlenrmv {
-    background-image: url(../img/bezahlenrmv.png);
-    background-repeat: no-repeat;
-  }
 
-.bezahlenvia {
-    background-image: url(../img/bezahlenvia.png);
-    background-repeat: no-repeat;
-  }
-.bezahlenhvv {
-    background-image: url(../img/bezahlenhvv.png);
-    background-repeat: no-repeat;
-  }
 .bezahlenmvv {
     background-image: url(../img/bezahlenmvv.png);
-    background-repeat: no-repeat;
-  }
-.bezahlenvbb {
-    background-image: url(../img/bezahlenvbb.png);
     background-repeat: no-repeat;
   }
 

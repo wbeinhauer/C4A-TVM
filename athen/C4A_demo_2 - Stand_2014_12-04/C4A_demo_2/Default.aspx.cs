@@ -11,15 +11,17 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Text;
-using Microsoft.PointOfService.Legacy;
-using Microsoft.PointOfService.Management;
-using Microsoft.PointOfService;
 
 namespace C4A_demo_2
 {
+    
+
     public partial class _Default : System.Web.UI.Page
     {
 
+        public CTicket ticket;
+
+        
         private string getjQueryCode(string jsCodetoRun)
         {
             StringBuilder sb = new StringBuilder();
@@ -29,9 +31,7 @@ namespace C4A_demo_2
 
             return sb.ToString();
         }
-        
-        
-        
+ 
         
         private void runjQueryCode(string jsCodetoRun)
         {
@@ -61,7 +61,7 @@ namespace C4A_demo_2
             // runjQueryCode("$('.button_contrast').switchClass('button_contrast','button_crazy','slow');$('.button_crazy').switchClass('button_crazy','button_contrast','fast');");
             runjQueryCode("$('.startseite_C4A').switchClass('startseite_C4A','startseite_C4A_contrast','slow');");
             runjQueryCode("$('.time').switchClass('time','time_contrast','slow');");
-            HyperLink4.CssClass = "button_contrast";
+            // HyperLink4.CssClass = "button_contrast";
             runjQueryCode("$('.zeiticon').switchClass('zeiticon','zeiticon_contrast','slow');");
             runjQueryCode("$('.button_normal').switchClass('button_normal','button_contrast','slow');");
             runjQueryCode("$('.button_eng_normal_eservice').switchClass('button_eng_normal_eservice','button_eng_contrast_eservice','slow');");
@@ -71,7 +71,7 @@ namespace C4A_demo_2
             
         }
 
-        public void HyperLinkB_Click(object sender, EventArgs e)
+        protected void HyperLinkB_Click(object sender, EventArgs e)
         {
             // runjQueryCode("$('.button_contrast').switchClass('button_contrast','button_crazy','slow');$('.button_crazy').switchClass('button_crazy','button_contrast','fast');");
             runjQueryCode("$('.startseite_C4A').switchClass('startseite_C4A','startseite_C4A_contrast','slow');");
@@ -88,91 +88,231 @@ namespace C4A_demo_2
 
         protected void HyperLinkC_Click(object sender, EventArgs e)
         {
-
-            IDScanner scanner = new IDScanner();
-            string Data = scanner.scan();
-
-            if(Data.Contains("la"))
-            {
-                runjQueryCode("$('.startseite_C4A').switchClass('startseite_C4A','startseite_C4A_contrast','slow');");
-                runjQueryCode("$('.zeiticon').switchClass('zeiticon','zeiticon_contrast','slow');");
-                runjQueryCode("$('.time').switchClass('time','time_contrast','slow');");
-                runjQueryCode("$('.button_normal').switchClass('button_normal','button_contrast','slow');");
-                runjQueryCode("$('.button_eng_normal_eservice').switchClass('button_eng_normal_eservice','button_eng_contrast_eservice','slow');");
-                runjQueryCode("$('.button_eng_normal').switchClass('button_eng_normal','button_eng_contrast','slow');");
-                runjQueryCode("$('.button_hoch_normal').switchClass('button_hoch_normal','button_hoch_contrast','slow');");
-                runjQueryCode("$('.button_hoch_normal_touristen').switchClass('button_hoch_normal_touristen','button_hoch_contrast_touristen','slow');");
-                runjQueryCode("$('.area_header').switchClass('area_header','area_header_contrast','slow');");
-
-            }
-
-
-            if (Data.Contains("lo"))
-            {
-                runjQueryCode("$('.startseite_C4A_contrast').switchClass('startseite_C4A_contrast','startseite_C4A','slow');");
-                runjQueryCode("$('.zeiticon_contrast').switchClass('zeiticon_contrast','zeiticon','slow');");
-                runjQueryCode("$('.time_contrast').switchClass('time_contrast','time','slow');");
-                runjQueryCode("$('.button_contrast').switchClass('button_contrast','button_normal','slow');");
-                runjQueryCode("$('.button_eng_contrast_eservice').switchClass('button_eng_contrast_eservice','button_eng_normal_eservice','slow');");
-                runjQueryCode("$('.button_eng_contrast').switchClass('button_eng_contrast','button_eng_normal','slow');");
-                runjQueryCode("$('.button_hoch_contrast').switchClass('button_hoch_contrast','button_hoch_normal','slow');");
-                runjQueryCode("$('.button_hoch_contrast_touristen').switchClass('button_hoch_contrast_touristen','button_hoch_normal_touristen','slow');");
-                runjQueryCode("$('.area_header_contrast').switchClass('area_header_contrast','area_header','slow');");
-
-            }
-            
-
-            HyperLink4.Text = Data;
-
             // runjQueryCode("$('.button_contrast').switchClass('button_contrast','button_crazy','slow');$('.button_crazy').switchClass('button_crazy','button_contrast','fast');");
-            // runjQueryCode("$('.startseitemvv').switchClass('startseitemvv','startseitemvv_contrast','slow');");
-            // runjQueryCode("$('.area_header').switchClass('area_header','area_header_contrast','slow');");
-            // runjQueryCode("$('.zeiticon').switchClass('zeiticon','zeiticon_contrast','slow');");
-            // runjQueryCode("$('.time').switchClass('time','time_contrast','slow');");
-            // runjQueryCode("$('.button_normal').switchClass('button_normal','button_contrast','slow');");
-            // runjQueryCode("$('.button_eng_normal_eservice').switchClass('button_eng_normal_eservice','button_eng_contrast_eservice','slow');");
-            // runjQueryCode("$('.button_eng_normal').switchClass('button_eng_normal','button_eng_contrast','slow');");
-            // runjQueryCode("$('.button_hoch_normal').switchClass('button_hoch_normal','button_hoch_contrast','slow');");
-            // runjQueryCode("$('.button_hoch_normal_touristen').switchClass('button_hoch_normal_touristen','button_hoch_contrast_touristen','slow');");
+            runjQueryCode("$('.startseite_C4A').switchClass('startseite_C4A','startseite_C4A_contrast','slow');");
+            runjQueryCode("$('.area_header').switchClass('area_header','area_header_contrast','slow');");
+            runjQueryCode("$('.zeiticon').switchClass('zeiticon','zeiticon_contrast','slow');");
+            runjQueryCode("$('.time').switchClass('time','time_contrast','slow');");
+            runjQueryCode("$('.button_normal').switchClass('button_normal','button_contrast','slow');");
+            runjQueryCode("$('.button_eng_normal_eservice').switchClass('button_eng_normal_eservice','button_eng_contrast_eservice','slow');");
+            runjQueryCode("$('.button_eng_normal').switchClass('button_eng_normal','button_eng_contrast','slow');");
+            runjQueryCode("$('.button_hoch_normal').switchClass('button_hoch_normal','button_hoch_contrast','slow');");
+            runjQueryCode("$('.button_hoch_normal_touristen').switchClass('button_hoch_normal_touristen','button_hoch_contrast_touristen','slow');");
+            
+         }
 
 
+
+        protected void DesignSwitch_Click(object sender, EventArgs e)
+        {
+            
+            String newstyle = "button_contrast";
+            Switch_Design(newstyle);
+            Switch_Design("area_header", "area_header_contrast");
+        }
+
+
+        public void Switch_Design(String newstyle)
+        {
+            String oldstyle = special_3.CssClass;
+            Switch_Design(oldstyle, newstyle);
+        }
+
+
+        public void Switch_Design(String oldstyle, String newstyle)
+        {
+
+            String arg = "";
+            arg = arg + "$('.";
+            arg = arg + oldstyle;
+            arg = arg + "').switchClass('";
+            arg = arg + oldstyle;
+            
+            arg = arg + "','" + newstyle;
+            arg = arg + "','slow');";
+
+            statuszeile.InnerHtml = arg;
+            runjQueryCode(arg);
+        }
+
+        public void setfontsize(int size)
+        {
+            Style style = new Style();
+            style.Font.Size = 36;
+            
             
         }
-
-
-        public void ConnectToData()
-        {
-            System.Data.Odbc.OdbcConnection conn =
-                new System.Data.Odbc.OdbcConnection();
-            // TODO: Modify the connection string and include any
-            // additional required properties for your database.
-            conn.ConnectionString = "Dsn=C4A;dbq=C:/USERS/WBEINHAU/DROPBOX/AUTOMATEN/C4A/C4A_DEMO_2/C4A_DEMO_2/APP_DATA/C4A_Ressources_3.accdb;driverid=25;fil=MS Access;";
-            try
-            {
-                conn.Open();
-
-                HyperLink4.Text = conn.GetSchema().ToString();
-
-                // Process data here.
-            }
-            catch (Exception ex)
-            {
-                HyperLink4.Text = "Schnubbeldibums";
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
-
-
-
 
         
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            System.Web.UI.Page _tvm = this.Page;
+            Global.tvm = _tvm;
+
+            applyLanguage(Global.current_language);
+            if(Global.current_language.Contains("de")) lang_button_de.CssClass = "language_button_de_pressed";
+            if (Global.current_language.Contains("en")) lang_button_de.CssClass = "language_button_en_pressed";
+            if (Global.current_language.Contains("fr")) lang_button_de.CssClass = "language_button_fr_pressed";
+            if (Global.current_language.Contains("es")) lang_button_de.CssClass = "language_button_es_pressed";
+            if (Global.current_language.Contains("it")) lang_button_de.CssClass = "language_button_it_pressed";
+            if (Global.current_language.Contains("gr")) lang_button_de.CssClass = "language_button_gr_pressed";
+
+        }
+
+        public void applyLanguage(String lang)
+        {
+            Global.fillWordingTable(lang);
+
+            
+            label_1.Text = Global.wordingtable[1];
+            label_3.Text = Global.wordingtable[3];
+            label_4.Text = Global.wordingtable[4];
+            label_5.Text = Global.wordingtable[5];
+            label_6.Text = Global.wordingtable[6];
+            label_7.Text = Global.wordingtable[7];
+            label_8.Text = Global.wordingtable[8];
+        }
+
+        public void serverside_apply_style(String theme)
+        {
+            dest_choice.CssClass = "button_contrast";
+            freq_1_button.CssClass = "button_contrast";
+            freq_2_button.CssClass = "button_contrast";
+            freq_3_button.CssClass = "button_contrast";
+        }
+
+        protected void touristbutton_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("tourist.aspx");
+        }
+
+        protected void freq_1_button_Click(object sender, EventArgs e)
+        {
+            Global.ticket.destination = freq_1_button.Text;
+            Global.ticket.basefare = 3.60;
+            Global.ticket.tarif = Global.wordingtable[5];
+            Response.Redirect("ticket_spec.aspx");
+            
+        }
+
+        protected void freq_2_button_Click(object sender, EventArgs e)
+        {
+            Global.ticket.destination = freq_2_button.Text;
+            Global.ticket.basefare = 2.00;
+            Response.Redirect("ticket_spec.aspx");
+        }
+
+        protected void freq_3_button_Click(object sender, EventArgs e)
+        {
+            Global.ticket.destination = freq_3_button.Text;
+            Global.ticket.basefare = 2.40;
+            Response.Redirect("ticket_spec.aspx");
+        }
+
+        protected void lang_button_de_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "de";
+            applyLanguage(Global.current_language);
+            lang_button_de.CssClass = "language_button_de_pressed";
+            lang_button_en.CssClass = "language_button_en_normal";
+            lang_button_fr.CssClass = "language_button_fr_normal";
+            lang_button_it.CssClass = "language_button_it_normal";
+            lang_button_gr.CssClass = "language_button_gr_normal"; 
+            lang_button_es.CssClass = "language_button_es_normal";
+
+        }
+
+        protected void lang_button_fr_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "fr";
+            applyLanguage(Global.current_language);   
+            lang_button_fr.CssClass = "language_button_fr_pressed";
+            lang_button_en.CssClass = "language_button_en_normal";
+            lang_button_de.CssClass = "language_button_de_normal";
+            lang_button_it.CssClass = "language_button_it_normal";
+            lang_button_gr.CssClass = "language_button_gr_normal";
+            lang_button_es.CssClass = "language_button_es_normal";
+        }
+
+        protected void lang_button_it_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "it";
+            applyLanguage(Global.current_language);
+            lang_button_it.CssClass = "language_button_it_pressed";
+            lang_button_en.CssClass = "language_button_en_normal";
+            lang_button_fr.CssClass = "language_button_fr_normal";
+            lang_button_de.CssClass = "language_button_de_normal";
+            lang_button_gr.CssClass = "language_button_gr_normal";
+            lang_button_es.CssClass = "language_button_es_normal";
+        }
+
+        protected void lang_button_es_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "es";
+            applyLanguage(Global.current_language);
+            lang_button_es.CssClass = "language_button_es_pressed";
+            lang_button_en.CssClass = "language_button_en_normal";
+            lang_button_fr.CssClass = "language_button_fr_normal";
+            lang_button_it.CssClass = "language_button_it_normal";
+            lang_button_gr.CssClass = "language_button_gr_normal";
+            lang_button_de.CssClass = "language_button_de_normal";
+        }
+
+        protected void lang_button_gr_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "gr";
+            applyLanguage(Global.current_language);
+            lang_button_gr.CssClass = "language_button_gr_pressed";
+            lang_button_en.CssClass = "language_button_en_normal";
+            lang_button_fr.CssClass = "language_button_fr_normal";
+            lang_button_it.CssClass = "language_button_it_normal";
+            lang_button_es.CssClass = "language_button_es_normal";
+            lang_button_de.CssClass = "language_button_de_normal";
+        }
+
+
+        protected void lang_button_en_Click(object sender, EventArgs e)
+        {
+            Global.current_language = "en";
+            applyLanguage(Global.current_language);
+            lang_button_en.CssClass = "language_button_en_pressed";
+            lang_button_de.CssClass = "language_button_de_normal";
+            lang_button_fr.CssClass = "language_button_fr_normal";
+            lang_button_it.CssClass = "language_button_it_normal";
+            lang_button_gr.CssClass = "language_button_gr_normal";
+            lang_button_es.CssClass = "language_button_es_normal";
+        }
+
+        protected void dest_choice_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("search_dest.aspx");
+        }
+
+        protected void special_1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("short.aspx");
+        }
+
+        protected void special_2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("day_ticket_spec.aspx");
+        }
+
+        protected void special_3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("weekly_ticket_spec.aspx");
+        }
+
+        protected void special_4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("monthly_ticket_spec.aspx");
+
+        }
+
+        protected void special_5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("group_ticket_spec.aspx");
         }
 
         // extralanger timeout
