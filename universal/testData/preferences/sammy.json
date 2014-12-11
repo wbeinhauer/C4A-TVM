@@ -6,7 +6,7 @@
     "http://registry.gpii.org/common/fontFaceGenericFontFace": [{"value": "sans serif"}],
     "http://registry.gpii.org/common/magnification": [{"value": 2.0}],
     "http://registry.gpii.org/common/tracking": [{"value": ["mouse"]}],
-    "http://registry.gpii.org/common/invertColours": [{"value": true}]
+    "http://registry.gpii.org/common/invertColours": [{"value": true}],
 	"de.fraunhofer.iao.C4A-TVM": [
         {
             "value": {

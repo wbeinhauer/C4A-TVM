@@ -1,3 +1,19 @@
+
+to support common term inverted, add 
+
+                "capabilitiesTransformations": {
+					"contrastTheme": {
+						"transform": {
+							"type": "fluid.transforms.condition",
+							"conditionPath":  "display.screenEnhancement.-provisional-invertColours",
+							"true": "yellow-black",
+							"false": "default"
+						}
+					}
+					,
+
+
+
     {
         "name": "C4A-TVM",
         "id": "de.fraunhofer.iao.C4A-TVM",
@@ -28,10 +44,7 @@
                             "inputPath": "display.screenEnhancement.-provisional-highContrastTheme",
                             "defaultInputValue": "default",
                             "options": {
-                                "black-white": {
-                                    "outputValue": "Black-White"
-                                },
-                                "yellow-black": {
+                               "yellow-black": {
                                     "outputValue": "Yellow-Black"
                                 },
                                 "default": {
@@ -39,9 +52,9 @@
                                 }
                             }
 							,
-							transform: {
-								type: "fluid.transforms.condition",
-								conditionPath:  "display.screenEnhancement.-provisional-highContrastEnabled",
+							"transform": {
+								"type": "fluid.transforms.condition",
+								"conditionPath":  "display.screenEnhancement.-provisional-highContrastEnabled",
 								"true": "theme.yellow-black"
 							}
                         }

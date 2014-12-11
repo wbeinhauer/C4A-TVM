@@ -23,59 +23,107 @@ namespace ConsoleGET
             
         {
 
-            
-            TVM tvm = new TVM{
-                fontsize = "big",
-                highContrastEnabled = "true"
+
+            TVMPreferences tvmPrefs = new TVMPreferences
+            {
+                contrastTheme = "yellow-black",
+                fontSize = "big",
+                fontFace = "Comic Sans",
+                buttonSize = "big",
+                timeOut = "long",
+                language = "de"
+
             };
-                
-            TVMSettings t2 = new TVMSettings(tvm);
+
+            TVMSettings t2 = new TVMSettings(tvmPrefs);
 
             string x = JsonConvert.SerializeObject(t2);
             
             Console.WriteLine(x + "  ConsoleGET.Program");
 
-            x = "{\"de.fraunhofer.iao.C4A-TVM\":{\"highContrastEnabled\": false, \"fontSize\": \"middle\"}}";
+            x = "{\"de.fraunhofer.iao.C4A-TVM\":{\"contrastTheme\": \"yellow-black\", \"fontSize\": \"default\", \"fontFace\": \"default\", \"buttonSize\": \"default\", \"timeOut\": \"default\", \"language\": \"default\"}}";
 
-            Console.WriteLine(x + "  middle");
+            Console.WriteLine("input string" + x);
 
             TVMSettings t1 = JsonConvert.DeserializeObject<TVMSettings>(x);
-            String f1 = t1.TVM.fontsize;
-            String c1 = t1.TVM.highContrastEnabled;
+            printTVMSettings(t1);
 
-            if (f1 != null)
+            Console.ReadLine();
+            
+        }
+
+        public static void printTVMSettings(TVMSettings t)
+        {
+            String c = t.TVMPreferences.contrastTheme;
+            String fs = t.TVMPreferences.fontSize;
+            String ff = t.TVMPreferences.fontFace;
+            String bs = t.TVMPreferences.buttonSize;
+            String to = t.TVMPreferences.timeOut;
+            String l = t.TVMPreferences.language;
+
+            if (fs != null)
             {
-                Console.WriteLine("f1 = " + f1);
+                Console.WriteLine("fs = " + fs);
             }
             else
             {
-                Console.WriteLine("f1 = null");
+                Console.WriteLine("fs = null");
             }
 
 
-            if (c1 != null)
+            if (c != null)
             {
-                Console.WriteLine("c1 = " + c1);
+                Console.WriteLine("c = " + c);
             }
             else
             {
-                Console.WriteLine("c1 = null");
+                Console.WriteLine("c = null");
             }
 
+            if (ff != null)
+            {
+                Console.WriteLine("ff = " + ff);
+            }
+            else
+            {
+                Console.WriteLine("ff = null");
+            }
 
-            Printer printer = new Printer();
-            string s = "";
-            if (printer != null) { s = printer.ToString(); } //ist trotzdem nicht da auch wenn nicht null.
-            Console.WriteLine("s =" + s);
-            Console.ReadLine();
-            //Bitmap ticket = printer.generateTicket("Typ","Start","Ziel","5,50");
-            //printer.printTicket(ticket);
-            IDScanner scanner = new IDScanner();
-            Console.WriteLine("scanner.scan =" + scanner.scan());
-            Console.ReadLine();
-            
+            if (fs != null)
+            {
+                Console.WriteLine("fs = " + fs);
+            }
+            else
+            {
+                Console.WriteLine("fs = null");
+            }
 
-            
+            if (bs != null)
+            {
+                Console.WriteLine("bs = " + bs);
+            }
+            else
+            {
+                Console.WriteLine("bs = null");
+            }
+
+            if (to != null)
+            {
+                Console.WriteLine("to = " + to);
+            }
+            else
+            {
+                Console.WriteLine("to = null");
+            }
+
+            if (l != null)
+            {
+                Console.WriteLine("l = " + l);
+            }
+            else
+            {
+                Console.WriteLine("l = null");
+            }
         }
 
         public void readJson()
@@ -112,22 +160,6 @@ namespace ConsoleGET
             Console.WriteLine("requested url = " + requested_url);
             Console.ReadLine();
 
-            //string response = makeRequest(requested_url);
-            string response = "{\"org.gnome.desktop.a11y.magnifier\":{\"mag-factor\":2,\"mouse-tracking\":\"centered\",\"screen-position\":\"fullscreen\"}}";
-            GnomeMagnifierSettings serialisedSettings = new GnomeMagnifierSettings();
-            serialisedSettings.JSONobject = "org.gnome.desktop.a11y.magnifier";
-            serialisedSettings.magFactor = "2";
-            serialisedSettings.mouseTracking = "centered";
-            serialisedSettings.screenPosition = "fullscreen";
-            String s = JsonConvert.SerializeObject(serialisedSettings);
-            Console.WriteLine(serialisedSettings + s);
-            Console.ReadLine();
-
-
-            GnomeMagnifierSettings parsedSettings = JsonConvert.DeserializeObject<GnomeMagnifierSettings>(response);
-            Console.WriteLine(response);
-            Console.WriteLine(" magFactor " + parsedSettings.magFactor + " mouseTracking " + parsedSettings.mouseTracking + " screenPosition " + parsedSettings.screenPosition);
-            Console.ReadLine();
         }
 
         public static string makeRequest(String reqUrl)
@@ -154,61 +186,37 @@ namespace ConsoleGET
         }
     }
 
-    public class Solution
-    {
 
-        public string name { get; set; } //2
-        public string id { get; set; } // id?
-        public Context[] contexts { get; set; }  //centered
-        public string screenPosition { get; set; } //fullscreen
-
-    }
-
-    public class Context
-    {
-
-        public  OS os { get; set; } //win32 web linux
-    }
-
-    public class OS
-    {
-
-        public string id { get; set; } //win32 web linux
-    }
-
-    
 
     public class TVMSettings
     {
-        
-        public TVMSettings(TVM tvm){
-            this.TVM = tvm;
+
+        public TVMSettings(TVMPreferences tvmPreferences)
+        {
+            this.TVMPreferences = tvmPreferences;
         }
 
         [JsonProperty("de.fraunhofer.iao.C4A-TVM")]
-        public TVM TVM {get; set;}
+        public TVMPreferences TVMPreferences { get; set; }
     }
 
 
-    public class TVM
+    public class TVMPreferences
     {
         //[JsonProperty("name")]
-        public string highContrastEnabled {get; set;}
+        public string contrastTheme {get; set;} // default, yellow-black
         //[JsonProperty("name")]
-        public string fontsize {get; set;}
+        public string fontSize { get; set; } //default, big
+        //[JsonProperty("name")]
+        public string fontFace { get; set; } //default (Calibri), Comics Sans, Tiresias
+        //[JsonProperty("name")]
+        public string buttonSize { get; set; } //default, big
+        //[JsonProperty("name")]
+        public string timeOut { get; set; } //default, long
+        //[JsonProperty("name")]
+        public string language { get; set; } //default (en), es, fr, it, de, he, ...
 
 
     }
-
-    public class GnomeMagnifierSettings
-    {
-
-        public string JSONobject { get; set; } // id?
-        public string magFactor { get; set; } //2
-        public string mouseTracking { get; set; }  //centered
-        public string screenPosition { get; set; } //fullscreen
-
-    }
- 
 
 }

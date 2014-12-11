@@ -38,3 +38,14 @@ http://127.0.0.1:8081/sammy/settings/%7B%22OS%22:%7B%22id%22:%22web%22%7D,%22sol
 http://127.0.0.1:8081/sammy/settings/%7B%22OS%22:%7B%22id%22:%22web%22%7D,%22solutions%22:[%7B%22id%22:%22id%22:%20%22de.fraunhofer.iao.C4A-TVM%22%7D]%7D
 
 start with JSON-solution description
+
+contrastTheme transformation
+http://127.0.0.1:8081/sammy/settings/%7B%22OS%22:%7B%22id%22:%22web%22%7D,%22solutions%22:%5B%7B%22id%22:%22de.fraunhofer.iao.C4A-TVM%22%7D%5D%7D
+{"isError":true,"message":"[object Object]ASSERTION FAILED: SyntaxError: Unexpected string"}
+-> missing , in NP set
+
+
+
+
+
+
